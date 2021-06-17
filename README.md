@@ -90,7 +90,7 @@ You can override individual templates in your own theme. To create a custom regi
 ``` 
 
 4.
-test [registration](http://localhost:9080/auth/realms/redfroggy/protocol/openid-connect/registrations?client_id=web_app&response_type=code&scope=openid%20email&redirect_uri=http://localhost&kc_locale=fr&invitation-code=my-invitation-code)
+test [registration](http://localhost:9080/auth/realms/redfroggy/protocol/openid-connect/registrations?client_id=web_app&response_type=code&scope=openid%20email&redirect_uri=http://localhost:9080/auth/realms/redfroggy/account&kc_locale=fr&invitation-code=my-invitation-code)
 
 ## Q&A
 

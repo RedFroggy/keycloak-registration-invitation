@@ -484,7 +484,7 @@
   "requiredCredentials": [
     "password"
   ],
-  "passwordPolicy": "specialChars(1) and upperCase(1) and lowerCase(1) and digits(1) and length(8)",
+  "passwordPolicy": "",
   "otpPolicyType": "totp",
   "otpPolicyAlgorithm": "HmacSHA1",
   "otpPolicyInitialCounter": 0,
@@ -999,8 +999,8 @@
       "id": "59a2eff4-f4a9-49fc-aad5-9fdaf332831b",
       "clientId": "web_app",
       "rootUrl": "",
-      "adminUrl": "https://www.redfroggy.fr/",
-      "baseUrl": "https://www.redfroggy.fr/",
+      "adminUrl": "",
+      "baseUrl": "http://localhost:9080/auth/realms/redfroggy/account",
       "surrogateAuthRequired": false,
       "enabled": true,
       "clientAuthenticatorType": "client-secret",
