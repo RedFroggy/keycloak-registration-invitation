@@ -1,4 +1,10 @@
 {
   "themes": [
+    {
+      "name": "redfroggy",
+      "types": [
+        "login"
+      ]
+    }
   ]
 }
