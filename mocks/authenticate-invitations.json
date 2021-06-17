@@ -1,0 +1,61 @@
+{
+  "plugins": [
+    {
+      "name": "random"
+    }
+  ],
+  "request": {
+    "method": "POST",
+    "path": "/authenticate-invitations"
+  },
+  "response": {
+    "body": {
+      "id": "#random:int:min=1000&max=9999#",
+      "role": "MANAGER",
+      "state": "PENDING",
+      "expiryDate": "2022-06-15T17:09:00.863541Z",
+      "createdDate": "2021-06-15T17:09:00.918469Z",
+      "invitee": {
+        "organisation": {
+          "id": "FR-00000078900011",
+          "nationalId": "00000078900011",
+          "name": "THE WORLD WORLD COMPANY",
+          "country": "FR",
+          "collector": false,
+          "depositor": true
+        },
+        "user": {
+          "title": "MR",
+          "name": "#random:name#",
+          "email": "#random:email#",
+          "langKey": "fr",
+          "login": "#random:int:min=1000&max=9999#",
+          "activated": false
+        }
+      },
+      "inviter": {
+        "organisation": {
+          "id": "FR-80207074800016",
+          "nationalId": "80207074800016",
+          "name": "RED FROGGY",
+          "country": "FR",
+          "collector": true,
+          "depositor": false
+        },
+        "user": {
+          "title": "MR",
+          "name": "David JAY",
+          "email": "david.jay@redfroggy.fr",
+          "langKey": "fr",
+          "login": "dej",
+          "activated": true
+        }
+      },
+      "type": "DEPOSITOR",
+      "jobs": [
+      ],
+      "version": 0,
+      "code": "9f188d1965d34caa2da8fc06ac893e43"
+    }
+  }
+}

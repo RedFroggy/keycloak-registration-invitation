@@ -19,7 +19,7 @@
   "enabled": true,
   "sslRequired": "external",
   "registrationAllowed": true,
-  "registrationEmailAsUsername": false,
+  "registrationEmailAsUsername": true,
   "rememberMe": false,
   "verifyEmail": true,
   "loginWithEmailAllowed": true,
@@ -1203,7 +1203,7 @@
   },
   "smtpServer": {
   },
-  "loginTheme": "keycloak",
+  "loginTheme": "redfroggy",
   "accountTheme": "keycloak",
   "emailTheme": "keycloak",
   "eventsEnabled": true,
@@ -1687,13 +1687,6 @@
       "builtIn": true,
       "authenticationExecutions": [
         {
-          "authenticator": "fc-registration-user-creation",
-          "requirement": "REQUIRED",
-          "priority": 10,
-          "userSetupAllowed": false,
-          "autheticatorFlow": false
-        },
-        {
           "authenticator": "registration-user-creation",
           "requirement": "REQUIRED",
           "priority": 20,
@@ -1718,6 +1711,14 @@
           "authenticator": "registration-recaptcha-action",
           "requirement": "DISABLED",
           "priority": 60,
+          "userSetupAllowed": false,
+          "autheticatorFlow": false
+        },
+        {
+          "authenticatorConfig": "invitation",
+          "authenticator": "registration-invitation",
+          "requirement": "REQUIRED",
+          "priority": 70,
           "userSetupAllowed": false,
           "autheticatorFlow": false
         }
@@ -1793,6 +1794,16 @@
       "config": {
         "update.profile.on.first.login": "missing"
       }
+    },
+    {
+      "id": "0f4f6119-611d-49bb-83ba-3a20a9144893",
+      "alias": "invitation",
+      "config": {
+        "invitation-validation-url": "http://localhost:3030/authenticate-invitations",
+        "invitation-code-param": "invitation-code",
+        "registration-success-url": "https://60c70d0d19aa1e00176a029c.mockapi.io/registrations",
+        "invitation-enforcement-mode": "enforcing"
+      }
     }
   ],
   "requiredActions": [
@@ -1821,9 +1832,9 @@
       "config": {}
     },
     {
-      "alias": "VERIFY_EMAIL_CODE",
-      "name": "Verify Email by code",
-      "providerId": "VERIFY_EMAIL_CODE",
+      "alias": "WEBHOOK_REGISTRATION_SUCCESS",
+      "name": "WEBHOOK_REGISTRATION_SUCCESS",
+      "providerId": "WEBHOOK_REGISTRATION_SUCCESS",
       "enabled": true,
       "defaultAction": false,
       "config": {}

@@ -1,4 +1,4 @@
-name: Keycloak Verify email by code Tag
+name: Keycloak registration invitation Tag
 
 on:
   push:
@@ -72,8 +72,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./target/keycloak-verify-email-by-code-${{ needs.build.outputs.version }}-javadoc.jar
-          asset_name: keycloak-verify-email-by-code-${{ needs.build.outputs.version }}-javadoc.jar
+          asset_path: ./target/keycloak-registration-invitation-${{ needs.build.outputs.version }}-javadoc.jar
+          asset_name: keycloak-registration-invitation-${{ needs.build.outputs.version }}-javadoc.jar
           asset_content_type: jar
 
       - name: Upload Release sources
@@ -82,8 +82,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./target/keycloak-verify-email-by-code-${{ needs.build.outputs.version }}-sources.jar
-          asset_name: keycloak-verify-email-by-code-${{ needs.build.outputs.version }}-sources.jar
+          asset_path: ./target/keycloak-registration-invitation-${{ needs.build.outputs.version }}-sources.jar
+          asset_name: keycloak-registration-invitation-${{ needs.build.outputs.version }}-sources.jar
           asset_content_type: jar
 
       - name: Upload Release
@@ -92,6 +92,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./target/keycloak-verify-email-by-code-${{ needs.build.outputs.version }}.jar
-          asset_name: keycloak-verify-email-by-code-${{ needs.build.outputs.version }}.jar
+          asset_path: ./target/keycloak-registration-invitation-${{ needs.build.outputs.version }}.jar
+          asset_name: keycloak-registration-invitation-${{ needs.build.outputs.version }}.jar
           asset_content_type: jar

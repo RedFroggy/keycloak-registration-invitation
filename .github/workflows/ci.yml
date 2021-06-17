@@ -1,4 +1,4 @@
-name: Keycloak Verify email by code RedFroggy CI
+name: Keycloak registration invitation RedFroggy CI
 
 on:
   push:

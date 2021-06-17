@@ -1,5 +1,11 @@
 version: '3'
 services:
+  faker:
+    image: dotronglong/faker:stable
+    volumes:
+      - ./mocks:/app/mocks
+    ports:
+      - "3030:3030"
   keycloak:
     network_mode: host
     build: .
@@ -16,7 +22,7 @@ services:
     volumes:
       - ./realm-config:/opt/jboss/keycloak/realm-config
       - ./standalone/configuration/standalone.xml:/opt/jboss/keycloak/standalone/configuration/standalone.xml
-      - ./src/main/resources/theme-resources/templates/login-verify-email-code.ftl:/opt/jboss/keycloak/themes/base/login/login-verify-email-code.ftl
+      - ./src/main/resources/theme/redfroggy:/opt/jboss/keycloak/themes/redfroggy
     environment:
       - DB_VENDOR=h2
       - DB_ADDR=localhost
@@ -28,18 +34,8 @@ services:
       - KEYCLOAK_PASSWORD=admin
       - JDBC_PARAMS=connectTimeout=30
       - PROXY_ADDRESS_FORWARDING=true
-#      - KEYCLOAK_LOGLEVEL=DEBUG
+      - KEYCLOAK_LOGLEVEL=DEBUG
 #    ports:
 #      - 9080:9080
 #      - 9443:9443
 #      - 10990:10990
-#    dns:
-#      - 8.8.8.8
-#      - 8.8.4.4
-
-#networks:
-#  default:
-#    ipam:
-#      driver: default
-#      config:
-#        - subnet: 172.28.0.0/16
