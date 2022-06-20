@@ -73,7 +73,7 @@ You can override individual templates in your own theme. To create a custom regi
 1. clone this repo git@github.com:RedFroggy/keycloak-registration-invitation.gi
 
 ``` bash
-    git clone git@github.com:RedFroggy/keycloak-verify-email-by-code.git
+    git clone git@github.com:RedFroggy/keycloak-registration-invitation.git
 ``` 
 
 2. package jar
@@ -82,6 +82,13 @@ You can override individual templates in your own theme. To create a custom regi
 
     mvn package
 ``` 
+
+Example to build with docker
+``` bash
+cd keycloak-registration-invitation
+docker run --rm -v "$(pwd)":/opt/maven -w /opt/maven maven:3.8.2-jdk-8 mvn -f /opt/maven/pom.xml clean package
+```
+
 
 3. run docker-compose
 
